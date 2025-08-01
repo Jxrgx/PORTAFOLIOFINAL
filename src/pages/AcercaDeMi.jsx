@@ -1,4 +1,4 @@
-import SectionTitle from "../Components/SectionTitle";
+import SectionTitle from "../components/SectionTitle";
 
 export default function AcercaDeMi (){
   return (
