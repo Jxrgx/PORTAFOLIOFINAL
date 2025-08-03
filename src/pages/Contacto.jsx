@@ -1,4 +1,4 @@
-import SectionTitle from "../Components/SectionTitle";
+import SectionTitle from "../components/SectionTitle";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contacto (){

@@ -1,4 +1,4 @@
-import SectionTitle from "../Components/SectionTitle";
+import SectionTitle from "../components/SectionTitle";
 import { Link } from "react-router-dom";
 
 export default function Inicio() {

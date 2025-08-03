@@ -1,4 +1,4 @@
-import SectionTitle from "../Components/SectionTitle";
+import SectionTitle from "../components/SectionTitle";
 
 export default function Proyectos() {
   const proyectos = [
@@ -11,14 +11,14 @@ export default function Proyectos() {
     },
     {
       titulo: "Perfumeria",
-      descripcion: "Clon visual de la plataforma Behance como práctica de diseño frontend.",
-      tecnologias: ["HTML", "CSS", "JavaScript"],
+      descripcion: "Pagina de Visualizacion de Perfumes con sus Especificaciones.",
+      tecnologias: ["HTML", "CSS",],
       imagen: "/proyectos/PERFUMERIA.png",
       enlace: "https://examenpractico.netlify.app",
     },
     {
       titulo: "MarketPal",
-      descripcion: "Aplicación para tomar notas simples con almacenamiento local.",
+      descripcion: "Sistema POS, Gestion de Inventario.",
       tecnologias: ["C#", ".Net","Firebase"],
       imagen: "/proyectos/MARKETPAL.png",
       enlace: "https://github.com/MikeGPQ/MarketPal-1.2.git",
