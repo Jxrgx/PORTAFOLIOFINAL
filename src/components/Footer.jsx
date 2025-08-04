@@ -1,6 +1,11 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaCode, FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const handleNavigation = (to) => {
+    // Scroll suave hacia arriba antes de navegar
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
@@ -85,12 +90,13 @@ export default function Footer() {
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.to}
+                    <Link
+                      to={link.to}
+                      onClick={() => handleNavigation(link.to)}
                       className="text-gray-400 hover:text-white transition-colors duration-200 text-sm hover:underline"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
