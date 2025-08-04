@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +67,6 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {/* Nav Links */}
             <ul className="flex gap-8">
               {navLinks.map((link) => (
                 <li key={link.to}>
@@ -79,8 +79,6 @@ export default function Navbar() {
                     }`}
                   >
                     {link.label}
-                    
-                    {/* Active indicator */}
                     <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transform transition-all duration-200 ${
                       location.pathname === link.to 
                         ? 'scale-x-100' 
@@ -91,7 +89,6 @@ export default function Navbar() {
               ))}
             </ul>
 
-            {/* Social Links */}
             <div className="flex items-center gap-4 pl-6 border-l border-gray-200">
               {socialLinks.map((social, index) => (
                 <a
@@ -109,15 +106,34 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <ul className="flex flex-col items-center gap-4 py-4 bg-white shadow-md rounded-lg">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className="text-gray-700 hover:text-blue-600 text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* Subtle gradient line at bottom */}
       <div className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
     </nav>
   );
