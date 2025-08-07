@@ -4,32 +4,32 @@ export default function Devlogs() {
   const devlogs = [
     {
       titulo: "Bitácora #1 – Inicio del proyecto",
-      id: "1l4UdaqKOMGy_fHAX5BnCjPM47Qz2raI-",
+      id: "deajxMlCg04",
       descripcion: "Primeros pasos y configuración inicial del proyecto de portafolio."
     },
     {
       titulo: "Bitácora #2 – Ejecución primer aplicativo SPA React, con un entorno de desarrollo integral configurado",
-      id: "1IfM8M2Wv6FVPGClaZb7CrHiipQGKPcxh",
+      id: "lZypzarNfHo",
       descripcion: "Configuración completa del entorno de desarrollo y primera implementación SPA."
     },
     {
       titulo: "Bitácora #3– Ejecución del primer aplicativo SPA React, con uso de Router y de Google Auth",
-      id: "1RFBIiJUPfQdSiawXBaBjvF1Kyb8kjkgW",
+      id: "0IajR2sfkZI",
       descripcion: "Implementación de navegación y sistema de autenticación con Google."
     },
     {
       titulo: "Bitácora #4 Examen Práctico Perfumería",
-      id: "11gF06YfUu3I1sV80CC4mWrOFBqycxaUN",
+      id: "zKGkCAvgfSE",
       descripcion: "Desarrollo de aplicación práctica para gestión de perfumería."
     },
     {
       titulo: "Bitácora #5 Integración de los elementos básicos de Firebase y Firestore",
-      id: "1xL7nFhpHUyRsK5Pp3CNkYkkxLsIDPAkd",
+      id: "Y4VMssNCBHo",
       descripcion: "Configuración e integración de base de datos Firebase y Firestore."
     },
     {
       titulo: "Bitácora #6 Finalización del CRUD",
-      id: "1arAJxpcs1pGQVbC2nQxiRWXDl2195lhh",
+      id: "zrc9wuK9hhE",
       descripcion: "Completado del sistema CRUD con todas las operaciones básicas."
     },
   ];
@@ -38,7 +38,7 @@ export default function Devlogs() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Header Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700 text-white">
-        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         <div className="relative px-8 py-16 max-w-6xl mx-auto">
           <div className="text-center">
             <SectionTitle className="text-white mb-4">
@@ -52,8 +52,8 @@ export default function Devlogs() {
           </div>
         </div>
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white bg-opacity-5 rounded-full transform -translate-y-32 translate-x-32"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white bg-opacity-5 rounded-full transform translate-y-24 -translate-x-24"></div>
       </div>
 
       {/* Main Content */}
@@ -69,7 +69,7 @@ export default function Devlogs() {
                 <div className="absolute left-8 top-24 w-0.5 h-32 bg-gradient-to-b from-blue-200 to-transparent hidden lg:block"></div>
               )}
               
-              <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:-translate-y-2">
+              <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform group-hover:-translate-y-2">
                 {/* Card header */}
                 <div className="p-8 pb-6">
                   <div className="flex items-start gap-6">
@@ -92,25 +92,23 @@ export default function Devlogs() {
                 {/* Video container */}
                 <div className="px-8 pb-8">
                   <div className="relative rounded-xl overflow-hidden shadow-lg bg-gray-100">
-                    <div className="aspect-w-16 aspect-h-9" style={{ aspectRatio: '16/9' }}>
+                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                       <iframe
-                        src={`https://drive.google.com/file/d/${log.id}/preview`}
-                        width="100%"
-                        height="100%"
-                        allow="autoplay"
-                        className="w-full h-full"
+                        src={`https://www.youtube.com/embed/${log.id}`}
+                        className="absolute top-0 left-0 w-full h-full"
+                        allow="autoplay; encrypted-media"
                         loading="lazy"
                         title={log.titulo}
                       ></iframe>
                     </div>
                     
                     {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
                 </div>
 
                 {/* Decorative border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-purple-500/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-500 to-purple-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
               </div>
             </div>
           ))}
